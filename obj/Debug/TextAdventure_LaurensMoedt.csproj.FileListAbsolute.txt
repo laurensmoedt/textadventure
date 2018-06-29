@@ -1,0 +1,7 @@
+C:\Users\laure\Documents\schooljaar 2017-2018\periode_04\Laurens_textadventure\source\repos\TextAdventure_LaurensMoedt\TextAdventure_LaurensMoedt\bin\Debug\txtvntrlrns.exe.config
+C:\Users\laure\Documents\schooljaar 2017-2018\periode_04\Laurens_textadventure\source\repos\TextAdventure_LaurensMoedt\TextAdventure_LaurensMoedt\bin\Debug\txtvntrlrns.exe
+C:\Users\laure\Documents\schooljaar 2017-2018\periode_04\Laurens_textadventure\source\repos\TextAdventure_LaurensMoedt\TextAdventure_LaurensMoedt\bin\Debug\txtvntrlrns.pdb
+C:\Users\laure\Documents\schooljaar 2017-2018\periode_04\Laurens_textadventure\source\repos\TextAdventure_LaurensMoedt\TextAdventure_LaurensMoedt\obj\Debug\TextAdventure_LaurensMoedt.csprojAssemblyReference.cache
+C:\Users\laure\Documents\schooljaar 2017-2018\periode_04\Laurens_textadventure\source\repos\TextAdventure_LaurensMoedt\TextAdventure_LaurensMoedt\obj\Debug\TextAdventure_LaurensMoedt.csproj.CoreCompileInputs.cache
+C:\Users\laure\Documents\schooljaar 2017-2018\periode_04\Laurens_textadventure\source\repos\TextAdventure_LaurensMoedt\TextAdventure_LaurensMoedt\obj\Debug\txtvntrlrns.exe
+C:\Users\laure\Documents\schooljaar 2017-2018\periode_04\Laurens_textadventure\source\repos\TextAdventure_LaurensMoedt\TextAdventure_LaurensMoedt\obj\Debug\txtvntrlrns.pdb
