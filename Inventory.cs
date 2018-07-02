@@ -7,9 +7,11 @@ namespace ZuulCS
     class Inventory
     {
         public List<Item> Items;
+        
 
         public Inventory()
         {
+            
             Items = new List<Item>();
         }
 
@@ -21,11 +23,6 @@ namespace ZuulCS
         public void Remove(Item item) {
             Items.Remove(item);
         }
-
-        public Item GetItem(int index) {
-            return Items[index];
-        }
-
 
     }
 }

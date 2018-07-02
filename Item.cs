@@ -6,8 +6,8 @@ namespace ZuulCS
 {
     class Item
     {
-        protected string name;
-        protected string description;
+        public string name;
+        public string description;
         private int weight;
 
         public Item(string name, int weight, string description)
@@ -17,7 +17,7 @@ namespace ZuulCS
             this.description = description;
         }
 
-        public string getName
+        public string Name
         {
             get { return name; }
         }
@@ -27,14 +27,12 @@ namespace ZuulCS
             get { return description; }
         }
 
-        public int getWeight
+        public int Weight
         {
             get { return weight; }
-        }
-
-        public int setWeight
-        {
             set { weight = value; }
         }
+
+        
     }
 }

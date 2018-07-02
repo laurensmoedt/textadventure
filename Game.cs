@@ -41,7 +41,7 @@ namespace ZuulCS
 
             restroom.setExit("north", hallway);
 
-            outside.Inventory.Add(new UsedNeedle("used needle", 10, "A used needle, can be used for lock picking maybe"));
+            operationroom.Inventory.Add(new UsedNeedle("used needle", 10, "Can be used for lock picking maybe"));
 
 
             player.CurrentRoom = operationroom;  // start game outside
@@ -97,23 +97,34 @@ namespace ZuulCS
 
 			string commandWord = command.getCommandWord();
 			switch (commandWord) {
+
 				case "help":
 					printHelp();
 					break;
+
 				case "go":
 					goRoom(command);
                     Console.WriteLine("items: ");
-                    atInventory();
+                    inInventory();
                     break;
+
 				case "quit":
 					wantToQuit = true;
 					break;
+
                 case "look":
                     looked();
-                    atInventory();
+                    Console.WriteLine("items: ");
+                    inInventory();
                     break;
-                    
-                    
+
+                case "take ":
+                    player.takeItem();
+                    break;
+
+                case "drop ":
+                    player.dropItem();
+                    break;
 
             }
 
@@ -159,22 +170,24 @@ namespace ZuulCS
 				Console.WriteLine("There is no door to "+direction+"!");
 			} else {
 				player.CurrentRoom = nextRoom;
+                Console.WriteLine();
                 Console.WriteLine(player.CurrentRoom.getLongDescription());
-                Console.WriteLine("                                         your health is: "+player.damage(1));
+                Console.WriteLine("                                             your health is: "+player.damage(1));
                 player.isAlive();
 			}
 		}
         private void looked()
         {
+            Console.WriteLine();
             Console.WriteLine(player.CurrentRoom.getLongDescription());
         }
 
-        public void atInventory()
+        public void inInventory()
         {
             for (int i = 0; i < player.CurrentRoom.Inventory.Items.Count; i++)
             {
                 
-                Console.WriteLine(player.CurrentRoom.Inventory.Items[i].getName + " - " + player.CurrentRoom.Inventory.Items[i].getDescription);
+                Console.WriteLine(player.CurrentRoom.Inventory.Items[i].Name + " - " + player.CurrentRoom.Inventory.Items[i].getDescription);
 
             }
         }

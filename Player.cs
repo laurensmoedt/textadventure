@@ -11,11 +11,13 @@ namespace ZuulCS
         private Room _currentRoom;
         private int health = 10;
         private Inventory inventory;
+        public int maxWeight;
 
         internal Inventory Inventory { get => inventory; }
 
         public Player()
         {
+            this.maxWeight = 20;
             inventory = new Inventory();
         }
 
@@ -42,8 +44,18 @@ namespace ZuulCS
             if (health <= 0)
             {
                 Console.WriteLine("you died");
-                
             }
         }
+
+        public void takeItem()
+        {
+            
+        }
+
+        public void dropItem()
+        {
+            
+        }
+
     }
 }
