@@ -8,7 +8,10 @@ namespace ZuulCS
         private Parser parser;
         private Player player;
 
-		public Game ()
+        internal Player _player { get => player; }
+
+
+        public Game ()
 		{
             player = new Player();
             parser = new Parser();
@@ -41,10 +44,12 @@ namespace ZuulCS
 
             restroom.setExit("north", hallway);
 
-            operationroom.Inventory.Add(new UsedNeedle("used needle", 10, "Can be used for lock picking maybe"));
+            operationroom.Inventory.addItem(new UsedNeedle("used needle", "Can be used for lock picking maybe"));
 
 
-            player.CurrentRoom = operationroom;  // start game outside
+            player.CurrentRoom = operationroom;  // start game in operationroom
+
+
         }
 
         /**
@@ -105,7 +110,7 @@ namespace ZuulCS
 				case "go":
 					goRoom(command);
                     Console.WriteLine("items: ");
-                    inInventory();
+                    insideInventory();
                     break;
 
 				case "quit":
@@ -115,15 +120,14 @@ namespace ZuulCS
                 case "look":
                     looked();
                     Console.WriteLine("items: ");
-                    inInventory();
+                    insideInventory();
                     break;
 
-                case "take ":
-                    player.takeItem();
+                case "take":
+                    takeItem(command);
                     break;
 
-                case "drop ":
-                    player.dropItem();
+                case "drop":
                     break;
 
             }
@@ -143,7 +147,8 @@ namespace ZuulCS
             Console.WriteLine("----------------------------------------------------------)");
             Console.WriteLine("You are lost. You are alone (aleast for now..)");
 			Console.WriteLine("You wander around at a abandoned hospital");
-			Console.WriteLine();
+            Console.WriteLine("try to escape the building");
+            Console.WriteLine();
 			Console.WriteLine("Your command words are:");
 			parser.showCommands();
             
@@ -182,7 +187,7 @@ namespace ZuulCS
             Console.WriteLine(player.CurrentRoom.getLongDescription());
         }
 
-        public void inInventory()
+        public void insideInventory()
         {
             for (int i = 0; i < player.CurrentRoom.Inventory.Items.Count; i++)
             {
@@ -193,5 +198,29 @@ namespace ZuulCS
         }
 
 
+        private void takeItem(Command command)
+        {
+            if (!command.hasSecondWord())
+            {
+                // if there is no second word, we don't know what to pick up...
+                Console.WriteLine("pickup what?");
+                return;
+            }
+
+            //player.CurrentRoom.Inventory.Items[i].Name = command.hasSecondWord();
+
+            //player.CurrentRoom.Inventory.Items = command.getSecondWord();
+
+            if (player.CurrentRoom.Inventory.Items == null)
+            {
+                Console.WriteLine("There is no item " + player.CurrentRoom + "!");
+            }
+            else if(player.Inventory.WeightLeft > 0)
+            {
+                player.CurrentRoom.Inventory.takeItem(player.Inventory, command.getSecondWord());
+                Console.WriteLine();
+                Console.WriteLine("you picked up an item!");
+            }
+        }
     }
 }

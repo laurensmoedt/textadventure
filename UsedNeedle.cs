@@ -8,7 +8,7 @@ namespace ZuulCS
 {
     class UsedNeedle : Item
     {
-        public UsedNeedle(string name, int weight, string description) : base(name, weight, description)
+        public UsedNeedle(string name, string description) : base(name, description)
         {
         }
     }

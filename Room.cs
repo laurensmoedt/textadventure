@@ -20,7 +20,7 @@ namespace ZuulCS
 			this.description = description;
 			exits = new Dictionary<string, Room>();
 
-            inventory = new Inventory();
+            inventory = new Inventory(5);
         }
 
 		/**
